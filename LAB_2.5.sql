@@ -18,12 +18,16 @@ from film;
 
 -- 4. What's the average movie duration expressed in format (hours, minutes)? 
 
-select CONCAT(FLOOR(avg(length)/60),':',LPAD(MOD(avg(length),60),2,'0')) as Hour
+select left(sec_to_time(avg(length)*60),5) as Hour
 from film;
+
+-- alternative method
+-- select CONCAT(FLOOR(avg(length)/60),':',LPAD(MOD(avg(length),60),2,'0')) as Hour
+-- from film;
 
 -- 5. How many distinct (different) actors' last names are there?
 
-select count(distinct(last_name))
+select count(distinct(last_name)) 'N last names'
 from actor;
 
 -- 6. Since how many days has the company been operating (check DATEDIFF() function)? 
