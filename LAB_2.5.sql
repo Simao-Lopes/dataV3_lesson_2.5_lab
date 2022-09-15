@@ -18,7 +18,7 @@ from film;
 
 -- 4. What's the average movie duration expressed in format (hours, minutes)? 
 
-select left(sec_to_time(avg(length)*60),5) as Hour
+select left(sec_to_time(avg(length)*60),5) as avg_movie_duration
 from film;
 
 -- alternative method
